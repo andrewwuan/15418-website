@@ -39,7 +39,7 @@
 <p>We aim to implement a state-of-the-art GPU ray tracer with optimized parallel bounding volume hierarchies. Our first goal is to build a ray tracer that runs parallelly on GPU. Our second goal is to construct parallel bounding volume hierarchies on GPU according to <b>Tero Karras</b>’s <a href="http://dl.acm.org/citation.cfm?id=2383801">Maximizing Parallelism in the Construction of BVHs, Octrees, and k-d Trees</a>. Our third goal is to optimize the bounding volume hierarchies according to <b>Tero Karras</b>’s and <b>Timo Aila</b>’s <a href="https://research.nvidia.com/publication/fast-parallel-construction-high-quality-bounding-volume-hierarchies">Fast Parallel Construction of High-Quality Bounding Volume Hierarchies</a>.
 </p>
 
-<h4>> Challenges</h4>
+<h4>Challenges</h4>
 <ul>
 <li><b>Karras 2012</b>: Most methods that generate BVH trees do so in a level-sequential fashion (one level at a time). This limits the amount of parallelism at the top levels of the tree. Also, most methods operate on breadth-first order, though depth-first order would usually be preferable considering data locality and cache hit rates.</li>
 <li><b>Karras 2013</b>: It's hard to find a middle ground between BVH traversing performance and tree quality. "The gap between the two types of construction methods is too wide".</li>
