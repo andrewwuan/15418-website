@@ -41,8 +41,8 @@
 
 <h4>Challenges</h4>
 <ul>
-<li><b>Karras 2012</b>: Most methods that generate BVH trees do so in a level-sequential fashion (one level at a time). This limits the amount of parallelism at the top levels of the tree. Also, most methods operate on breadth-first order, though depth-first order would usually be preferable considering data locality and cache hit rates.</li>
-<li><b>Karras 2013</b>: It's hard to find a middle ground between BVH traversing performance and tree quality. "The gap between the two types of construction methods is too wide".</li>
+<li><a href="http://dl.acm.org/citation.cfm?id=2383801"><b>Karras 2012</b></a>: Most methods that generate BVH trees do so in a level-sequential fashion (one level at a time). This limits the amount of parallelism at the top levels of the tree. Also, most methods operate on breadth-first order, though depth-first order would usually be preferable considering data locality and cache hit rates.</li>
+<li><a href="https://research.nvidia.com/publication/fast-parallel-construction-high-quality-bounding-volume-hierarchies"><b>Karras 2013</b></a>: It's hard to find a middle ground between BVH traversing performance and tree quality. "The gap between the two types of construction methods is too wide".</li>
 <li>It's hard to port a well-developed CPU raytracer to GPU because that would mean porting most of the library functions to CUDA.</li>
 <li>It's hard to debug complicate data structures in CUDA because GPU doesn't give much error information.</li>
 </ul>
