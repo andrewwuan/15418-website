@@ -59,6 +59,14 @@
 </ul>
 
 <h3>
+<a id="rather-drive-stick" class="anchor" href="#rather-drive-stick" aria-hidden="true"><span class="octicon octicon-link"></span></a>Specifications</h3>
+<h4>Starter Code</h4>
+<p>We use <a href="http://www.kevinbeason.com/smallpt/">smallpt</a> as our starter code. <a href="http://www.kevinbeason.com/smallpt/">smallpt</a> uses spheres as the only geometry type. It's a concise and elegant raytracer that is relatively easy to port to CUDA.
+<h4>Hardware</h4>
+<p>We directly use the benchmarks on <a href="http://www.kevinbeason.com/smallpt/">smallpt website</a> as our CPU benchmark. As said on the website, "Timings and resulting images for different numbers of samples per pixel (spp) on a 2.4 GHz Intel Core 2 Quad CPU using 4 threads". OpenMP is used to achieve CPU-side parallelism.<p>
+<p>We use AWS's GPU instance to benchmark our GPU-side code. It uses NVIDIA's <a href="http://www.techpowerup.com/gpudb/2312/grid-k520.html">GRID K520</a> GPU. This GPU has 1536 concurrent cores (800 MHz per core), and 4 GB of video memory (We only utilized one GPU, though GRID K520 has two GPUs).</p>
+
+<h3>
 <a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Preliminary Results</h3>
 
 <img src="images/1.jpg">
