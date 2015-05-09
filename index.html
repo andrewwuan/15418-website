@@ -33,13 +33,13 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h3>
-<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Project Summary</h3>
+<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>> Project Summary</h3>
 
 <h4>Goals</h4>
 <p>We aim to implement a state-of-the-art GPU ray tracer with optimized parallel bounding volume hierarchies. Our first goal is to build a ray tracer that runs parallelly on GPU. Our second goal is to construct parallel bounding volume hierarchies on GPU according to <b>Tero Karras</b>’s <a href="http://dl.acm.org/citation.cfm?id=2383801">Maximizing Parallelism in the Construction of BVHs, Octrees, and k-d Trees</a>. Our third goal is to optimize the bounding volume hierarchies according to <b>Tero Karras</b>’s and <b>Timo Aila</b>’s <a href="https://research.nvidia.com/publication/fast-parallel-construction-high-quality-bounding-volume-hierarchies">Fast Parallel Construction of High-Quality Bounding Volume Hierarchies</a>.
 </p>
 
-<h4>Challenges</h4>
+<h4>> Challenges</h4>
 <ul>
 <li><b>Karras 2012</b>: Most methods that generate BVH trees do so in a level-sequential fashion (one level at a time). This limits the amount of parallelism at the top levels of the tree. Also, most methods operate on breadth-first order, though depth-first order would usually be preferable considering data locality and cache hit rates.</li>
 <li><b>Karras 2013</b>: It's hard to find a middle ground between BVH traversing performance and tree quality. "The gap between the two types of construction methods is too wide".</li>
@@ -48,7 +48,7 @@
 </ul>
 
 <h3>
-<a id="rather-drive-stick" class="anchor" href="#rather-drive-stick" aria-hidden="true"><span class="octicon octicon-link"></span></a>Plan To Show</h3>
+<a id="rather-drive-stick" class="anchor" href="#rather-drive-stick" aria-hidden="true"><span class="octicon octicon-link"></span></a>> Plan To Show</h3>
 
 <ul>
 <li>Graph 1: Runtime comparison between a CPU ray tracer and a GPU ray tracer</li>
@@ -59,15 +59,18 @@
 </ul>
 
 <h3>
-<a id="rather-drive-stick" class="anchor" href="#rather-drive-stick" aria-hidden="true"><span class="octicon octicon-link"></span></a>Specifications</h3>
+<a id="rather-drive-stick" class="anchor" href="#rather-drive-stick" aria-hidden="true"><span class="octicon octicon-link"></span></a>> Specifications</h3>
 <h4>Starter Code</h4>
-<p>We use <a href="http://www.kevinbeason.com/smallpt/">smallpt</a> as our starter code. <a href="http://www.kevinbeason.com/smallpt/">smallpt</a> uses spheres as the only geometry type. It's a concise and elegant raytracer that is relatively easy to port to CUDA.
+<p>The focus of our project is implementing fast parallel BVHs on GPU, so we do not plan to implement a ray tracer from scratch. Hence, we decide to use <a href="http://www.kevinbeason.com/smallpt/">smallpt</a> as our ray tracer starter code. It is a simple CPU ray tracer that renders spheres. It uses OpenMP to achieve parallelism on CPU.
 <h4>Hardware</h4>
-<p>We directly use the benchmarks on <a href="http://www.kevinbeason.com/smallpt/">smallpt website</a> as our CPU benchmark. As said on the website, "Timings and resulting images for different numbers of samples per pixel (spp) on a 2.4 GHz Intel Core 2 Quad CPU using 4 threads". OpenMP is used to achieve CPU-side parallelism.<p>
+<h5>CPU</h5>
+<p>We use the benchmarks on <a href="http://www.kevinbeason.com/smallpt/">smallpt website</a> as our CPU runtime reference. Here is the hardware specification on the website: "... different numbers of samples per pixel (spp) on a 2.4 GHz Intel Core 2 Quad CPU using 4 threads ...".
+<p>
+<h5>GPU</h5>
 <p>We use AWS's GPU instance to benchmark our GPU-side code. It uses NVIDIA's <a href="http://www.techpowerup.com/gpudb/2312/grid-k520.html">GRID K520</a> GPU. This GPU has 1536 concurrent cores (800 MHz per core), and 4 GB of video memory (We only utilized one GPU, though GRID K520 has two GPUs).</p>
 
 <h3>
-<a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Preliminary Results</h3>
+<a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span class="octicon octicon-link"></span></a>> Results</h3>
 
 <img src="images/1.jpg">
 <center>Graph 1: GPU Raytracer vs. CPU Raytracer</center>
